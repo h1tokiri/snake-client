@@ -22,5 +22,4 @@ const handleUserInput = function (key) {
   }
 };
 
-connect();
 setupInput();
