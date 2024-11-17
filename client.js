@@ -12,7 +12,34 @@ const connect = function (name) {
 
   conn.on("connect", () => {
     console.log("Successfully connected to the game server!");
+
+    // send name command
     conn.write(`Name: ${name}`);
+    console.log(`Name command sent: Name: ${name}`);
+
+    // // send initial movement commands
+    // conn.write("Move: up");
+    // console.log("Move: up command sent to the server");
+
+    // // experiment with sequential commands
+    // setTimeout(() => {
+    //   conn.write("Move: left");
+    //   console.log("Move: left command sent to the server");
+    // }, 1000);
+    
+    // setTimeout(() => {
+    //   conn.write("Move: down");
+    //   console.log("Move: down command sent to the server");
+    // }, 2000);
+
+    // setTimeout(() => {
+    //   conn.write("Move: right");
+    //   console.log("Move: right command sent to the server");
+    // }, 3000);
+
+    // setInterval(() => {
+    //   conn.write("Move: up");
+    // }, 1000); // sends move: up every second
   });
 
   conn.on("data", (data) => {
@@ -23,3 +50,8 @@ const connect = function (name) {
 };
 
 module.exports = { connect };
+
+// "Move: up" - move up one square (unless facing down)
+// "Move: down" - move down one square (unless facing up)
+// "Move: left" - move left one square (unless facing right)
+// "Move: right" - move left one square (unless facing left)
