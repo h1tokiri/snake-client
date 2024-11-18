@@ -1,10 +1,12 @@
 const net = require("net");
 
+const { IP, PORT } = require("./constants");
+
 // establishes a connection with the game server
 const connect = function (name) {
   const conn = net.createConnection({
-    host: "localhost", // IP address here,
-    port: 50541, // PORT number here,
+    host: IP, // IP address here,
+    port: PORT, // PORT number here,
   });
 
   // interpret incoming data as text
@@ -25,8 +27,3 @@ const connect = function (name) {
 };
 
 module.exports = { connect };
-
-// "Move: up" - move up one square (unless facing down)
-// "Move: down" - move down one square (unless facing up)
-// "Move: left" - move left one square (unless facing right)
-// "Move: right" - move left one square (unless facing left)
