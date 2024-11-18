@@ -15,7 +15,7 @@ const connect = function (name) {
 
     // send name command
     conn.write(`Name: ${name}`);
-    console.log(`Name command sent: Name: ${name}`);
+    // console.log(`Name command sent: Name: ${name}`);
 
     // // send initial movement commands
     // conn.write("Move: up");
