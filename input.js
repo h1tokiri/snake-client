@@ -4,7 +4,7 @@ let connection;
 
 const setupInput = (conn) => {
   connection = conn;
-  console.log("Connection object in setupInput:", connection); //debug log
+  // console.log("Connection object in setupInput:", connection); //debug log
   // setupInput(conn);
   const stdin = process.stdin; // create variable to hold the stdin object so we don't have to type process.stdin multiple times
   stdin.setRawMode(true); // raw mode allows us to listen for individual keypresses instead of waiting for user to press enter
