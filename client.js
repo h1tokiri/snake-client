@@ -15,31 +15,6 @@ const connect = function (name) {
 
     // send name command
     conn.write(`Name: ${name}`);
-    // console.log(`Name command sent: Name: ${name}`);
-
-    // // send initial movement commands
-    // conn.write("Move: up");
-    // console.log("Move: up command sent to the server");
-
-    // // experiment with sequential commands
-    // setTimeout(() => {
-    //   conn.write("Move: left");
-    //   console.log("Move: left command sent to the server");
-    // }, 1000);
-    
-    // setTimeout(() => {
-    //   conn.write("Move: down");
-    //   console.log("Move: down command sent to the server");
-    // }, 2000);
-
-    // setTimeout(() => {
-    //   conn.write("Move: right");
-    //   console.log("Move: right command sent to the server");
-    // }, 3000);
-
-    // setInterval(() => {
-    //   conn.write("Move: up");
-    // }, 1000); // sends move: up every second
   });
 
   conn.on("data", (data) => {
